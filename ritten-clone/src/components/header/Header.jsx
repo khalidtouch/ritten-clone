@@ -1,11 +1,15 @@
 import React from 'react'
 
+import './Header.css'
 import { Toolbar, AppBar, IconButton, Typography, Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 export default function Header() {
+    const navigate = useNavigate()
+
     return (
         <AppBar position='static'>
-            <Toolbar>
+            <Toolbar className='header-toolbar'>
                 <IconButton
                     size='large'
                     edge='start'
@@ -13,7 +17,7 @@ export default function Header() {
                     aria-label='menu'
                     sx={{ mr: 2 }}
                 >
-                   
+
                 </IconButton>
 
 
@@ -22,10 +26,10 @@ export default function Header() {
                     component="div"
                     sx={{ flexGrow: 1 }}
                 >
-                    Ritten Blog Clone
+                    Ritten
                 </Typography>
 
-                <Button color='inherit'>Create</Button>
+                <Button color='inherit' onClick={() => navigate('blog')}>Create</Button>
 
             </Toolbar>
         </AppBar>

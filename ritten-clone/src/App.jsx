@@ -1,7 +1,7 @@
 import './App.css';
-import NewBlogPage from './pages/NewBlogPage';
-import HomePage from './pages/HomePage';
-import Header from './components/Header'
+import NewBlogPage from './pages/new/NewBlogPage';
+import HomePage from './pages/home/HomePage';
+import Header from './components/header/Header'
 import React from 'react'
 import {
   BrowserRouter as Router,
