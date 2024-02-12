@@ -6,7 +6,7 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Routes
+  Routes,
 } from 'react-router-dom'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <div className='app-container'>
       <Router>
         <Header />
-  
+
         <Routes>
           <Route path='/blog' element={<NewBlogPage isLoading='true' />} />
           <Route path='/' element={<HomePage />} />

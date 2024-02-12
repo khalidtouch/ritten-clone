@@ -1,12 +1,12 @@
 import React from 'react'
 
 import './Header.css'
-import { Toolbar, AppBar, IconButton, Typography, Button } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import { Toolbar, AppBar, IconButton, Typography } from '@mui/material'
+import { MenuButton } from '../Buttons';
+import { useLocation } from 'react-router-dom';
 
 export default function Header() {
-    const navigate = useNavigate()
-
+    const location = useLocation()
     return (
         <AppBar position='static'>
             <Toolbar className='header-toolbar'>
@@ -20,16 +20,17 @@ export default function Header() {
 
                 </IconButton>
 
-
                 <Typography
-                    variant='h6'
+                    variant='h3'
                     component="div"
                     sx={{ flexGrow: 1 }}
                 >
                     Ritten
                 </Typography>
 
-                <Button color='inherit' onClick={() => navigate('blog')}>Create</Button>
+                <MenuButton
+                    pathname={location.pathname}
+                />
 
             </Toolbar>
         </AppBar>
