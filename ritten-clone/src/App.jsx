@@ -16,7 +16,7 @@ function App() {
         <Header />
   
         <Routes>
-          <Route path='/blog' element={<NewBlogPage />} />
+          <Route path='/blog' element={<NewBlogPage isLoading='true' />} />
           <Route path='/' element={<HomePage />} />
         </Routes>
       </Router>

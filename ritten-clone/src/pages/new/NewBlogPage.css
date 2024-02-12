@@ -32,3 +32,20 @@
     font-size: 16px;
 }
 
+.button-create-blog-content {
+    display: flex;
+    flex-direction: row;
+    align-items:  center;
+    justify-content: space-between;
+    height: 20px;
+    padding: 12px;
+    margin: 4px;
+}
+
+.button-create-blog-text {
+    width: 95%;
+    justify-content: end;
+    align-items: end;
+    padding-inline-start: 120px;
+    font-size: 18px;
+}
