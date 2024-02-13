@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import './Header.css'
 import { Toolbar, AppBar, IconButton, Typography } from '@mui/material'
 import { MenuButton } from '../Buttons';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ hasCompletedBlogCreation }) {
     const location = useLocation()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (hasCompletedBlogCreation) navigate(-1) 
+    },)
+
     return (
         <AppBar position='static'>
             <Toolbar className='header-toolbar'>

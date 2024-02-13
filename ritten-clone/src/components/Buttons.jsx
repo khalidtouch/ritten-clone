@@ -6,7 +6,7 @@ export function MenuButton({ pathname, onClick }) {
 
     if (pathname && pathname.endsWith('blog')) {
         return (
-            <Button color='inherit' onClick={() => navigate(-1)}>Home</Button>
+            <Button color='inherit' onClick={() => navigate(-1)}>Cancel</Button>
         )
     }
 

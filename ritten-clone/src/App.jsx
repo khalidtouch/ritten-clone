@@ -2,7 +2,7 @@ import './App.css';
 import NewBlogPage from './pages/new/NewBlogPage';
 import HomePage from './pages/home/HomePage';
 import Header from './components/header/Header'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -57,12 +57,12 @@ function App() {
   return (
     <div className='app-container'>
       <Router>
-        <Header />
+        <Header hasCompletedBlogCreation={completedCreateBlog} />
         <ToastContainer
           position='top-center'
           autoClose={5000}
           hideProgressBar={true}
-          closeOnClick 
+          closeOnClick
         />
 
         <Routes>
