@@ -45,7 +45,8 @@
 .button-create-blog-text {
     width: 95%;
     justify-content: end;
-    align-items: end;
-    padding-inline-start: 120px;
+    align-items: center;
+    padding-inline-start: 80px;
+    padding-inline-end: 80px;
     font-size: 18px;
 }

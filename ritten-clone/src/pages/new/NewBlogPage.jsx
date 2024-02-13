@@ -69,7 +69,7 @@ class NewBlogPage extends Component {
                                 <div className='button-create-blog-text'>Create</div>
                                 <InfinitySpin className='button-spinner' />
                             </div>) : (<div className='button-create-blog-content'>
-                                <div button-create-blog-text>
+                                <div className='button-create-blog-text'>
                                     Create
                                 </div>
                             </div>)
