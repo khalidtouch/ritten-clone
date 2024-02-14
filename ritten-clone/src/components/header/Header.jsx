@@ -5,12 +5,15 @@ import { Toolbar, AppBar, IconButton, Typography } from '@mui/material'
 import { MenuButton } from '../Buttons';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export default function Header({ hasCompletedBlogCreation }) {
+export default function Header({ hasCompletedBlogCreation, clearNavigationBackStack }) {
     const location = useLocation()
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (hasCompletedBlogCreation) navigate(-1) 
+        if (hasCompletedBlogCreation) { 
+            navigate(-1) 
+            clearNavigationBackStack()
+        }
     },)
 
     return (

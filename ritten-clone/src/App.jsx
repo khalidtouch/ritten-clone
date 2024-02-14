@@ -2,7 +2,7 @@ import './App.css';
 import NewBlogPage from './pages/new/NewBlogPage';
 import HomePage from './pages/home/HomePage';
 import Header from './components/header/Header'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -53,11 +53,32 @@ function App() {
     }
   }
 
+  const fetchBlogs = async () => {
+    try {
+      const response = await fetch(`${jsonPlaceholderBaseUrl}/posts`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+
+      const blogs = await response.json()
+      if (Array.isArray(blogs)) {
+        setBlogs(blogs)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    fetchBlogs();
+  },);
 
   return (
     <div className='app-container'>
       <Router>
-        <Header hasCompletedBlogCreation={completedCreateBlog} />
+        <Header hasCompletedBlogCreation={completedCreateBlog} clearNavigationBackStack={() => setCompletedCreateBlog(false)} />
         <ToastContainer
           position='top-center'
           autoClose={5000}
@@ -79,7 +100,7 @@ function App() {
             />
           }
           />
-          <Route path='/' element={<HomePage />} />
+          <Route path='/' element={<HomePage blogs={blogs} />} />
         </Routes>
       </Router>
     </div>
